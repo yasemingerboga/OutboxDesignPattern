@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b2FTeMJFoFkaqbkiHf3mzMqyP5MS6DK1gx7ad+PxVFNFB4YzthAUWQ1IxroqILX+eSda0DpR86DO8Br3TGhrIQ==",
+  "dgSpecHash": "+Z7JOV787WtIKLAdTjR/PIKxY2kOCOCAJVBLP6yNXTaMVA3Jt4hgetA1KilwX8AKNoUzPda82SKHJfV8RZEx6Q==",
   "success": true,
-  "projectFilePath": "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj",
+  "projectFilePath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yasem\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\yasem\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

@@ -270,11 +270,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/7.0.0": {
+      "Microsoft.EntityFrameworkCore/7.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.0",
-          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.0",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.1",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.1",
           "Microsoft.Extensions.Caching.Memory": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0"
@@ -289,7 +289,7 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/7.0.0": {
+      "Microsoft.EntityFrameworkCore.Abstractions/7.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
@@ -298,7 +298,7 @@
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/7.0.0": {
+      "Microsoft.EntityFrameworkCore.Analyzers/7.0.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -1800,10 +1800,10 @@
         "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll"
       ]
     },
-    "Microsoft.EntityFrameworkCore/7.0.0": {
-      "sha512": "9W+IfmAzMrp2ZpKZLhgTlWljSBM9Erldis1us61DAGi+L7Q6vilTbe1G2zDxtYO8F2H0I0Qnupdx5Cp4s2xoZw==",
+    "Microsoft.EntityFrameworkCore/7.0.1": {
+      "sha512": "uvzJkdmqbB50COlCiNaBjWc4cl3kHBO9P7glPk6wK8xyLrli4xeVip+pmMyT/kYc2shWm1YdxegxFqKeCvQXAA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/7.0.0",
+      "path": "microsoft.entityframeworkcore/7.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1811,35 +1811,35 @@
         "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.7.0.1.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/7.0.0": {
-      "sha512": "Pfu3Zjj5+d2Gt27oE9dpGiF/VobBB+s5ogrfI9sBsXQE1SG49RqVz5+IyeNnzhyejFrPIQsPDRMchhcojy4Hbw==",
+    "Microsoft.EntityFrameworkCore.Abstractions/7.0.1": {
+      "sha512": "pPaoi2RHAkrsJ2kcGZGBiJFUXSS1LC+qET6HCn4hXP+X/kvIriJLv8lx6ddI6gTluGvm/lDgPAA0zZDXYaKf3A==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/7.0.0",
+      "path": "microsoft.entityframeworkcore.abstractions/7.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.7.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.7.0.1.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/7.0.0": {
-      "sha512": "Qkd2H+jLe37o5ku+LjT6qf7kAHY75Yfn2bBDQgqr13DTOLYpEy1Mt93KPFjaZvIu/srEcbfGGMRL7urKm5zN8Q==",
+    "Microsoft.EntityFrameworkCore.Analyzers/7.0.1": {
+      "sha512": "4A4NFkPFoRMdry24Hjdb5/sOH3tU3hzFePTGnSg8P+VBrFp/EO8kcA4L0hBzwbXj2HGNL8I/quYyS5GVtb4EOg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/7.0.0",
+      "path": "microsoft.entityframeworkcore.analyzers/7.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.7.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.7.0.1.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
@@ -4250,8 +4250,8 @@
     },
     "Application/1.0.0": {
       "type": "project",
-      "path": "../../../OutboxPattern/Core/Application/Application.csproj",
-      "msbuildProject": "../../../OutboxPattern/Core/Application/Application.csproj"
+      "path": "../../Core/Application/Application.csproj",
+      "msbuildProject": "../../Core/Application/Application.csproj"
     },
     "ApplicationPayment/1.0.0": {
       "type": "project",
@@ -4260,8 +4260,8 @@
     },
     "Domain/1.0.0": {
       "type": "project",
-      "path": "../../../OutboxPattern/Core/Domain/Domain.csproj",
-      "msbuildProject": "../../../OutboxPattern/Core/Domain/Domain.csproj"
+      "path": "../../Core/Domain/Domain.csproj",
+      "msbuildProject": "../../Core/Domain/Domain.csproj"
     },
     "DomainPayment/1.0.0": {
       "type": "project",
@@ -4275,14 +4275,15 @@
     },
     "Shared/1.0.0": {
       "type": "project",
-      "path": "../../../OutboxPattern/Shared/Shared.csproj",
-      "msbuildProject": "../../../OutboxPattern/Shared/Shared.csproj"
+      "path": "../../Shared/Shared.csproj",
+      "msbuildProject": "../../Shared/Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Application >= 1.0.0",
       "ApplicationPayment >= 1.0.0",
+      "Microsoft.EntityFrameworkCore >= 7.0.1",
       "Microsoft.Extensions.Hosting >= 6.0.1",
       "Persistance >= 1.0.0",
       "Quartz >= 3.5.0",
@@ -4296,11 +4297,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Microservice\\Outbox\\PAYMENT\\PaymentProcessOutboxJob\\PaymentProcessOutboxJob.csproj",
+      "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\PaymentProcessOutboxJob\\PaymentProcessOutboxJob.csproj",
       "projectName": "PaymentProcessOutboxJob",
-      "projectPath": "E:\\Microservice\\Outbox\\PAYMENT\\PaymentProcessOutboxJob\\PaymentProcessOutboxJob.csproj",
+      "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\PaymentProcessOutboxJob\\PaymentProcessOutboxJob.csproj",
       "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-      "outputPath": "E:\\Microservice\\Outbox\\PAYMENT\\PaymentProcessOutboxJob\\obj\\",
+      "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\PaymentProcessOutboxJob\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4317,14 +4318,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj": {
-              "projectPath": "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj"
+            "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj": {
+              "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj"
             },
-            "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj": {
-              "projectPath": "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj"
+            "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj": {
+              "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj"
             },
-            "E:\\Microservice\\Outbox\\PAYMENT\\Infrastructure\\Persistance\\Persistance.csproj": {
-              "projectPath": "E:\\Microservice\\Outbox\\PAYMENT\\Infrastructure\\Persistance\\Persistance.csproj"
+            "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Infrastructure\\Persistance\\Persistance.csproj": {
+              "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Infrastructure\\Persistance\\Persistance.csproj"
             }
           }
         }
@@ -4339,6 +4340,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[7.0.1, )"
+          },
           "Microsoft.Extensions.Hosting": {
             "target": "Package",
             "version": "[6.0.1, )"

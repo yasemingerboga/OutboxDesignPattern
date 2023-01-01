@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L3LBDXyPZc+5OgzvfuNCQCotFw1Z+SSrpiYr5aO2hXvvhoOfTU0bmVf8jz9lB0cA83THf5lH559BiZyQk62kEQ==",
+  "dgSpecHash": "QChE5Apo+a8mL5mKs3jg2cOIHXIEjoQV1Fnkj/4LqYkNk1KYhWlKyV3TYS3jC/LJhHT8NrbIeP6+6dtGox4qyw==",
   "success": true,
-  "projectFilePath": "E:\\Microservice\\OutboxPattern\\Presentation\\StockAPI\\StockAPI.csproj",
+  "projectFilePath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Presentation\\StockAPI\\StockAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yasem\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\yasem\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

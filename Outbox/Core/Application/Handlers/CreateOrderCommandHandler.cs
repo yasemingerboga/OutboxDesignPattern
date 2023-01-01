@@ -27,6 +27,7 @@ namespace Application.Handlers
         {
             Order newOrder = new Order { Description = request.Description, Quantity = request.Quantity, CreatedAt = DateTime.Today };
             await _orderRepository.AddAsync(newOrder);
+            await _orderRepository.SaveChangesAsync();
             OrderOutbox orderOutbox = new()
             {
                 OccuredOn = DateTime.UtcNow,

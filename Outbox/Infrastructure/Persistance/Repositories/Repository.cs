@@ -21,6 +21,13 @@ namespace Persistance.Repositories
         public async Task AddAsync(T model)
             => await _context.AddAsync(model);
 
+        public async Task<T> AddAsyncT(T model)
+        {
+            await _context.AddAsync(model);
+            return model;
+        }
+
+
         public async Task<List<T>> GetAll() => await Table.ToListAsync();
 
         public async Task<List<T>> GetWhere(System.Linq.Expressions.Expression<Func<T, bool>> method)

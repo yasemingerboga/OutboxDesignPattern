@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj": {}
+    "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj": {}
   },
   "projects": {
-    "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj": {
+    "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj",
+        "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj",
+        "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-        "outputPath": "E:\\Microservice\\OutboxPattern\\Core\\Application\\obj\\",
+        "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj"
+              "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj"
               },
-              "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj": {
-                "projectPath": "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj"
+              "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj": {
+                "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj"
               }
             }
           }
@@ -87,14 +87,14 @@
         }
       }
     },
-    "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj": {
+    "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj",
+        "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj",
+        "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-        "outputPath": "E:\\Microservice\\OutboxPattern\\Core\\Domain\\obj\\",
+        "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -147,68 +147,14 @@
         }
       }
     },
-    "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj": {
+    "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj",
-        "projectName": "Shared",
-        "projectPath": "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-        "outputPath": "E:\\Microservice\\OutboxPattern\\Shared\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj",
+        "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj",
         "projectName": "ApplicationPayment",
-        "projectPath": "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj",
+        "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Application\\ApplicationPayment.csproj",
         "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-        "outputPath": "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Application\\obj\\",
+        "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -225,14 +171,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj": {
-                "projectPath": "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj"
+              "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj": {
+                "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj"
               },
-              "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj": {
-                "projectPath": "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj"
+              "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj": {
+                "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj"
               },
-              "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj": {
-                "projectPath": "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj"
+              "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj": {
+                "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj"
               }
             }
           }
@@ -279,14 +225,68 @@
         }
       }
     },
-    "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj": {
+    "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj",
+        "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj",
         "projectName": "DomainPayment",
-        "projectPath": "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj",
+        "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj",
         "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-        "outputPath": "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Domain\\obj\\",
+        "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj",
+        "projectName": "Shared",
+        "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
+        "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",

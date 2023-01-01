@@ -1,13 +1,17 @@
 ﻿using Application.Consumers;
+using Persistance.Repositories;
 
 namespace OrderAPI.Consumers
 {
     public class PaymentResponseEventConsumerHostedService : IHostedService
     {
         private readonly IServiceProvider _serviceProvider;
+        //private OrderRepository _orderRepository;
         public PaymentResponseEventConsumerHostedService(IServiceProvider serviceProvider)
+            //, OrderRepository orderRepository)
         {
             _serviceProvider = serviceProvider;
+            //_orderRepository = orderRepository;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -19,6 +23,7 @@ namespace OrderAPI.Consumers
                 //var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");
                 var topic = "payment-response-topic";
                 Task.Run(async () => await eventConsumer.Consume(topic), cancellationToken);
+                //await _orderRepository.SaveChangesAsync();
             }
             return Task.CompletedTask;
         }

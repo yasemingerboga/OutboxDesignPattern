@@ -10,3 +10,15 @@ E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\Domain.dll
 E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\refint\Domain.dll
 E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\Domain.pdb
 E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\ref\Domain.dll
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\bin\Debug\net6.0\Domain.deps.json
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\bin\Debug\net6.0\Domain.dll
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\bin\Debug\net6.0\Domain.pdb
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\obj\Debug\net6.0\Domain.dll
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\obj\Debug\net6.0\refint\Domain.dll
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\obj\Debug\net6.0\Domain.pdb
+E:\Github-Outbox\OutboxDesignPattern\Outbox\Core\Domain\obj\Debug\net6.0\ref\Domain.dll

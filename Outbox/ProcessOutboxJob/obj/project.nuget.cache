@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yhdx8YWlMMe1sbsivtgpjMh3cLhYV3LM9fgqd1rO+xKchlPuSOVF6UK7QbjlAooU3yhNS8cpAFTDslngXfQxgw==",
+  "dgSpecHash": "nwaZTbBAyRzq7hgHLRzfZOwptUCC6J0w374HR37wAdQHTE+50wG+s7+laTevtrCQpADRyklHH4B8V7VYyWtqCA==",
   "success": true,
-  "projectFilePath": "E:\\Microservice\\OutboxPattern\\ProcessOutboxJob\\ProcessOutboxJob.csproj",
+  "projectFilePath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\ProcessOutboxJob\\ProcessOutboxJob.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yasem\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\yasem\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

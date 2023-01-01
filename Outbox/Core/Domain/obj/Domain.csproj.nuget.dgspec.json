@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj": {}
+    "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj": {
+    "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj",
+        "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj",
+        "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-        "outputPath": "E:\\Microservice\\OutboxPattern\\Core\\Domain\\obj\\",
+        "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",

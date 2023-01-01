@@ -3566,7 +3566,6 @@
     "net6.0": [
       "Application >= 1.0.0",
       "Confluent.Kafka >= 1.9.3",
-      "Domain >= 1.0.0",
       "Persistance >= 1.0.0",
       "Shared >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
@@ -3578,11 +3577,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Microservice\\OutboxPattern\\Presentation\\StockAPI\\StockAPI.csproj",
+      "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Presentation\\StockAPI\\StockAPI.csproj",
       "projectName": "StockAPI",
-      "projectPath": "E:\\Microservice\\OutboxPattern\\Presentation\\StockAPI\\StockAPI.csproj",
+      "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Presentation\\StockAPI\\StockAPI.csproj",
       "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-      "outputPath": "E:\\Microservice\\OutboxPattern\\Presentation\\StockAPI\\obj\\",
+      "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Presentation\\StockAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3599,17 +3598,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj": {
-              "projectPath": "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj"
+            "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj": {
+              "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj"
             },
-            "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj": {
-              "projectPath": "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj"
+            "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Infrastructure\\Persistance\\Persistance.csproj": {
+              "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Infrastructure\\Persistance\\Persistance.csproj"
             },
-            "E:\\Microservice\\OutboxPattern\\Infrastructure\\Persistance\\Persistance.csproj": {
-              "projectPath": "E:\\Microservice\\OutboxPattern\\Infrastructure\\Persistance\\Persistance.csproj"
-            },
-            "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj": {
-              "projectPath": "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj"
+            "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj": {
+              "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj"
             }
           }
         }

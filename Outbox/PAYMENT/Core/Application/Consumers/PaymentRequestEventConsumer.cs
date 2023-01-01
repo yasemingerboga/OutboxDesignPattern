@@ -1,5 +1,4 @@
-﻿using Application.Producers;
-using Application.Repositories;
+﻿using Application.Repositories;
 using Confluent.Kafka;
 using DomainPayment;
 using Shared.Events;

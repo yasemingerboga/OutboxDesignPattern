@@ -1,7 +1,4 @@
-﻿using Application.Consumers;
-using Application.Repositories;
-using Confluent.Kafka;
-using DomainPayment.Entities;
+﻿using Confluent.Kafka;
 using Microsoft.Extensions.Options;
 using Shared.Events;
 using System.Text.Json;

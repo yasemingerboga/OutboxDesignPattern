@@ -19,11 +19,15 @@ namespace ProcessOutboxJob.Jobs
         //readonly IPublishEndpoint _publishEndpoint;
         private readonly IEventProducer _eventProducer;
         private IOrderOutboxRepository _orderOutboxRepository;
+        private IOrderRepository _orderRepository;
 
-        public OrderOutboxPublishJob(IEventProducer eventProducer, IOrderOutboxRepository orderOutboxRepository)
+
+        public OrderOutboxPublishJob(IEventProducer eventProducer, IOrderOutboxRepository orderOutboxRepository,
+            IOrderRepository orderRepository)
         {
             _eventProducer = eventProducer;
             _orderOutboxRepository = orderOutboxRepository;
+            _orderRepository = orderRepository;
             //_orderOutboxRepository = orderOutboxRepository;
         }
 
@@ -49,40 +53,13 @@ namespace ProcessOutboxJob.Jobs
                         //var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");
                         var topic = "payment-request-topic";
                         await _eventProducer.Produce1Async(topic, orderCreatedEvent);
+                        //wait for payment-response-topic;
+                        //başarılıysa order add gerçekleşecek
+                        //değilse gerçekleşmeyecek?
                     }
                 }
                 orderOutbox.ProcessedDate = DateTime.Now;
                 await _orderOutboxRepository.UpdateAsync(orderOutbox);
-                //if (OrderSingletonDatabase.DataReaderState)
-                //{
-                //    OrderSingletonDatabase.DataReaderBusy();
-                //    List<OrderOutbox> orderOutboxes = (await OrderSingletonDatabase.QueryAsync<OrderOutbox>
-                //        ($@"SELECT * FROM orderdb.OrderOutboxes WHERE ProcessedDate IS NULL ORDER By OccuredOn DESC")).ToList();
-
-                //    foreach (OrderOutbox orderOutbox in orderOutboxes)
-                //    {
-                //        if (orderOutbox.Type == nameof(OrderCreatedEvent))
-                //        {
-                //            Order? order = JsonSerializer.Deserialize<Order>(orderOutbox.Payload);
-                //            if (order != null)
-                //            {
-                //                OrderCreatedEvent orderCreatedEvent = new()
-                //                {
-                //                    Description = order.Description,
-                //                    OrderId = order.Id,
-                //                    Quantity = order.Quantity,
-                //                    IdempotentToken = orderOutbox.IdempotentToken
-                //                };
-
-                //                var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");
-                //                await _eventProducer.Produce1Async(topic, orderCreatedEvent);
-                //            }
-                //        }
-
-                //        int result = await OrderSingletonDatabase.ExecuteAsync
-                //            (@$"UPDATE orderdb.OrderOutboxes SET ProcessedDate = GETDATE() WHERE IdempotentToken = '{orderOutbox.IdempotentToken}'");
-                //    }
-                //    OrderSingletonDatabase.DataReaderReady();
                 Console.WriteLine("Order outbox table checked!");
             }
 

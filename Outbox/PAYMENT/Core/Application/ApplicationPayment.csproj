@@ -18,9 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OutboxPattern\Core\Application\Application.csproj" />
-    <ProjectReference Include="..\..\..\..\OutboxPattern\Shared\Shared.csproj" />
+    <ProjectReference Include="..\..\..\Core\Application\Application.csproj" />
+    <ProjectReference Include="..\..\..\Shared\Shared.csproj" />
     <ProjectReference Include="..\Domain\DomainPayment.csproj" />
   </ItemGroup>
-
 </Project>

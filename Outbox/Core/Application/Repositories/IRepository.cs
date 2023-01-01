@@ -14,6 +14,7 @@ namespace Application.Repositories
         Task AddAsync(T model);
         Task<T> UpdateAsync(T model);
         Task SaveChangesAsync();
+        Task<T> AddAsyncT(T model);
 
     }
 }

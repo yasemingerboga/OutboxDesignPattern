@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e9Zivlcb4iXmjw2roY47jptDBm61VotOJMpXu00NB9Jz7EvSrQTnqPgoN42hcUrTYQq9gjtFE9oQAi2gA8fNDA==",
+  "dgSpecHash": "k/Qggi6noVuKzzvmlibiZO9UHe5m/NhZlWagq6ymC/O5IPTV58bOczLPhWoxd7ZP8nMCVU1f/a/VrbJUXq6WwQ==",
   "success": true,
-  "projectFilePath": "E:\\Microservice\\OutboxPattern\\Infrastructure\\Persistance\\Persistance.csproj",
+  "projectFilePath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Infrastructure\\Persistance\\Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yasem\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\yasem\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

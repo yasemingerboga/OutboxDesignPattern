@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SOvqsrUbAXnVzGJyJF/tQzVU7YyS3Q2W+ZrFtwHSWG6dX9CvPzM5Wijx+xJ3R8G493qT4ogOJjI9xMqAUCuCtQ==",
+  "dgSpecHash": "bFCfZ73IxQbNuFxjfNWSabdyM7lDk5lmO/czdrtzMjFn2sTFrnWiJsYth3gyl2m2Cp4QfNC55eUsDJivHAUO7A==",
   "success": true,
-  "projectFilePath": "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj",
+  "projectFilePath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

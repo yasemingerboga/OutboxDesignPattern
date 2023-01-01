@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj",
+      "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj",
       "projectName": "DomainPayment",
-      "projectPath": "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj",
+      "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Domain\\DomainPayment.csproj",
       "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-      "outputPath": "E:\\Microservice\\Outbox\\PAYMENT\\Core\\Domain\\obj\\",
+      "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\PAYMENT\\Core\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",

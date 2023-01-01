@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj",
+      "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj",
       "projectName": "Shared",
-      "projectPath": "E:\\Microservice\\OutboxPattern\\Shared\\Shared.csproj",
+      "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\Shared.csproj",
       "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-      "outputPath": "E:\\Microservice\\OutboxPattern\\Shared\\obj\\",
+      "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",

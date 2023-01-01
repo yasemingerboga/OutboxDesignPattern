@@ -3844,11 +3844,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Microservice\\OutboxPattern\\Presentation\\OrderAPI\\OrderAPI.csproj",
+      "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Presentation\\OrderAPI\\OrderAPI.csproj",
       "projectName": "OrderAPI",
-      "projectPath": "E:\\Microservice\\OutboxPattern\\Presentation\\OrderAPI\\OrderAPI.csproj",
+      "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Presentation\\OrderAPI\\OrderAPI.csproj",
       "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-      "outputPath": "E:\\Microservice\\OutboxPattern\\Presentation\\OrderAPI\\obj\\",
+      "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Presentation\\OrderAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3865,11 +3865,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj": {
-              "projectPath": "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj"
+            "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj": {
+              "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj"
             },
-            "E:\\Microservice\\OutboxPattern\\Infrastructure\\Persistance\\Persistance.csproj": {
-              "projectPath": "E:\\Microservice\\OutboxPattern\\Infrastructure\\Persistance\\Persistance.csproj"
+            "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Infrastructure\\Persistance\\Persistance.csproj": {
+              "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Infrastructure\\Persistance\\Persistance.csproj"
             }
           }
         }

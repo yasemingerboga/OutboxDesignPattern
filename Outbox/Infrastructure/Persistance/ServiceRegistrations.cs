@@ -1,6 +1,4 @@
-﻿using Application.Consumers;
-using Application.Producers;
-using Application.Repositories;
+﻿using Application.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Persistance.Context;

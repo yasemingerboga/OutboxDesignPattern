@@ -10,3 +10,15 @@ E:\Microservice\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\DomainPayment.dll
 E:\Microservice\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\refint\DomainPayment.dll
 E:\Microservice\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\DomainPayment.pdb
 E:\Microservice\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\ref\DomainPayment.dll
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\bin\Debug\net6.0\DomainPayment.deps.json
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\bin\Debug\net6.0\DomainPayment.dll
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\bin\Debug\net6.0\DomainPayment.pdb
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\DomainPayment.csproj.AssemblyReference.cache
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\DomainPayment.GeneratedMSBuildEditorConfig.editorconfig
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\DomainPayment.AssemblyInfoInputs.cache
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\DomainPayment.AssemblyInfo.cs
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\DomainPayment.csproj.CoreCompileInputs.cache
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\DomainPayment.dll
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\refint\DomainPayment.dll
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\DomainPayment.pdb
+E:\Github-Outbox\OutboxDesignPattern\Outbox\PAYMENT\Core\Domain\obj\Debug\net6.0\ref\DomainPayment.dll

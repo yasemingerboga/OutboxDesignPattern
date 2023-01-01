@@ -3631,11 +3631,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Microservice\\OutboxPattern\\Infrastructure\\Persistance\\Persistance.csproj",
+      "projectUniqueName": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Infrastructure\\Persistance\\Persistance.csproj",
       "projectName": "Persistance",
-      "projectPath": "E:\\Microservice\\OutboxPattern\\Infrastructure\\Persistance\\Persistance.csproj",
+      "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Infrastructure\\Persistance\\Persistance.csproj",
       "packagesPath": "C:\\Users\\yasem\\.nuget\\packages\\",
-      "outputPath": "E:\\Microservice\\OutboxPattern\\Infrastructure\\Persistance\\obj\\",
+      "outputPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Infrastructure\\Persistance\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yasem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3652,11 +3652,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj": {
-              "projectPath": "E:\\Microservice\\OutboxPattern\\Core\\Application\\Application.csproj"
+            "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj": {
+              "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Application\\Application.csproj"
             },
-            "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj": {
-              "projectPath": "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj"
+            "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj": {
+              "projectPath": "E:\\Github-Outbox\\OutboxDesignPattern\\Outbox\\Core\\Domain\\Domain.csproj"
             }
           }
         }
