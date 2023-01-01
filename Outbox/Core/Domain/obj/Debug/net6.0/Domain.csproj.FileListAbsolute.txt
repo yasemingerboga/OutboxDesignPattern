@@ -1,0 +1,12 @@
+E:\Microservice\OutboxPattern\Core\Domain\bin\Debug\net6.0\Domain.deps.json
+E:\Microservice\OutboxPattern\Core\Domain\bin\Debug\net6.0\Domain.dll
+E:\Microservice\OutboxPattern\Core\Domain\bin\Debug\net6.0\Domain.pdb
+E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\Domain.dll
+E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\refint\Domain.dll
+E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\Domain.pdb
+E:\Microservice\OutboxPattern\Core\Domain\obj\Debug\net6.0\ref\Domain.dll

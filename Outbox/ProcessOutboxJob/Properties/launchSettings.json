@@ -1,0 +1,12 @@
+﻿{
+  "profiles": {
+    "ProcessOutboxJob": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development",
+        "KAFKA_TOPIC": "first"
+      }
+    }
+  }
+}

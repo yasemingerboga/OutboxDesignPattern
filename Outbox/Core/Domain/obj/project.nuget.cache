@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "b2FTeMJFoFkaqbkiHf3mzMqyP5MS6DK1gx7ad+PxVFNFB4YzthAUWQ1IxroqILX+eSda0DpR86DO8Br3TGhrIQ==",
+  "success": true,
+  "projectFilePath": "E:\\Microservice\\OutboxPattern\\Core\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\yasem\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
+    "C:\\Users\\yasem\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\yasem\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\yasem\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
