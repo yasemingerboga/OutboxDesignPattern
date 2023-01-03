@@ -28,6 +28,7 @@ namespace Application.Handlers
             Order newOrder = new Order { Description = request.Description, Quantity = request.Quantity, CreatedAt = DateTime.Today };
             await _orderRepository.AddAsync(newOrder);
             await _orderRepository.SaveChangesAsync();
+            Console.WriteLine($"Order tablosuna kayıt yapıldı.");
             OrderOutbox orderOutbox = new()
             {
                 OccuredOn = DateTime.UtcNow,
@@ -38,6 +39,7 @@ namespace Application.Handlers
             };
             await _orderOutboxRepository.AddAsync(orderOutbox);
             await _orderOutboxRepository.SaveChangesAsync();
+            Console.WriteLine($"Order Outbox tablosuna kayıt yapıldı.");
             return new CreateOrderCommandResponse { Description = newOrder.Description, CreatedAt = newOrder.CreatedAt, Quantity = newOrder.Quantity, Id = newOrder.Id };
         }
     }
