@@ -21,8 +21,8 @@ namespace Application.Handlers
         {
             Payment newPayment = new Payment { Name = request.Name, isPay = request.isPay };
             await _paymentRepository.AddAsync(newPayment);
-            //burda olmalı mı olmamalı mı? (id getirmek için eklendi.)
             await _paymentRepository.SaveChangesAsync();
+            Console.WriteLine("Payment Tablosuna Kayıt Yapıldı");
             PaymentOutbox orderOutbox = new()
             {
                 OccuredOn = DateTime.UtcNow,
@@ -33,6 +33,7 @@ namespace Application.Handlers
             };
             await _paymentOutboxRepository.AddAsync(orderOutbox);
             await _paymentOutboxRepository.SaveChangesAsync();
+            Console.WriteLine("Payment Outbox Tablosuna Kayıt Yapıldı");
             return new CreatePaymentCommandResponse { Id = newPayment.Id, isPay = newPayment.isPay, Name = newPayment.Name };
         }
     }
