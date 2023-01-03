@@ -55,6 +55,8 @@ namespace Application.Consumers
 
                     Payment payment = new Payment() { Id = @event.Id, isPay = true, Name = "Credit Card" };
                     await _paymentRepository.AddAsync(payment);
+                    await _paymentRepository.SaveChangesAsync();
+                    Console.WriteLine("Payment Tablosuna kayıt yapıldı.");
                     PaymentOutbox paymentOutbox = new PaymentOutbox()
                     {
                         OccuredOn = DateTime.UtcNow,
@@ -65,7 +67,7 @@ namespace Application.Consumers
                     };
                     await _paymentOutboxRepository.AddAsync(paymentOutbox);
                     await _paymentOutboxRepository.SaveChangesAsync();
-
+                    Console.WriteLine("Payment Outbox Tablosuna kayıt yapıldı.");
                     //await _eventProducer.ProduceAsync<PaymentCreatedEvent>("payment-response-topic", @event);
                     consumer.Commit(consumerResult);
                 }
