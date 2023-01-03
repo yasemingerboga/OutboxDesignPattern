@@ -12,7 +12,7 @@ using Persistance.Context;
 namespace Persistance.Migrations
 {
     [DbContext(typeof(OrderDbContext))]
-    [Migration("20221117113937_initial")]
+    [Migration("20230103193334_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace Persistance.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Entities.Order", b =>
+            modelBuilder.Entity("DomainPayment.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,7 +48,7 @@ namespace Persistance.Migrations
                     b.ToTable("Orders", "orderdb");
                 });
 
-            modelBuilder.Entity("Domain.Entities.OrderInbox", b =>
+            modelBuilder.Entity("DomainPayment.Entities.OrderInbox", b =>
                 {
                     b.Property<Guid>("IdempotentToken")
                         .ValueGeneratedOnAdd()
@@ -58,8 +58,8 @@ namespace Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("Processed")
                         .HasColumnType("bit");
@@ -72,7 +72,7 @@ namespace Persistance.Migrations
                     b.ToTable("OrderInboxes", "orderdb");
                 });
 
-            modelBuilder.Entity("Domain.Entities.OrderOutbox", b =>
+            modelBuilder.Entity("DomainPayment.Entities.OrderOutbox", b =>
                 {
                     b.Property<Guid>("IdempotentToken")
                         .ValueGeneratedOnAdd()
@@ -87,6 +87,9 @@ namespace Persistance.Migrations
 
                     b.Property<DateTime?>("ProcessedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<long>("Step")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Type")
                         .IsRequired()

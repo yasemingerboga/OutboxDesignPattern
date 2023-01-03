@@ -17,5 +17,6 @@ namespace DomainPayment.Entities
         public string @Type { get; set; }
         public string Payload { get; set; }
         public Guid IdempotentToken { get; set; }
+        public long Step { get; set; }
     }
 }

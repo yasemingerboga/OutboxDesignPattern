@@ -20,7 +20,7 @@ namespace Persistance.Migrations
                 columns: table => new
                 {
                     IdempotentToken = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    OrderId = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Processed = table.Column<bool>(type: "bit", nullable: false)
@@ -39,7 +39,8 @@ namespace Persistance.Migrations
                     OccuredOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProcessedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Payload = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Payload = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Step = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
