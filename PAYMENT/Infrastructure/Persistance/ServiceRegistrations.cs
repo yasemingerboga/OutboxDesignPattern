@@ -1,10 +1,10 @@
 ﻿using Application.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Persistance.Context;
-using Persistance.Repositories;
+using PaymentPersistance.Context;
+using PaymentPersistance.Repositories;
 
-namespace Persistance
+namespace PaymentPersistance
 {
     public static class ServiceRegistrations
     {

@@ -18,11 +18,13 @@ namespace PaymentProcessOutboxJob.Jobs
         //readonly IPublishEndpoint _publishEndpoint;
         private readonly IEventProducer _eventProducer;
         private IPaymentOutboxRepository _paymentOutboxRepository;
+        private IOrderOutboxRepository _orderOutboxRepository;
 
-        public PaymentOutboxPublishJob(IEventProducer eventProducer, IPaymentOutboxRepository paymentOutboxRepository)
+        public PaymentOutboxPublishJob(IEventProducer eventProducer, IPaymentOutboxRepository paymentOutboxRepository, IOrderOutboxRepository orderOutboxRepository)
         {
             _eventProducer = eventProducer;
             _paymentOutboxRepository = paymentOutboxRepository;
+            _orderOutboxRepository = orderOutboxRepository;
         }
 
         public async Task Execute(IJobExecutionContext context)
@@ -39,8 +41,9 @@ namespace PaymentProcessOutboxJob.Jobs
                         PaymentCreatedEvent paymentCreatedEvent = new()
                         {
                             Id = payment.Id,
-                            isPay=payment.isPay,
-                            IdempotentToken = paymentOutbox.IdempotentToken
+                            isPay = payment.isPay,
+                            IdempotentToken = paymentOutbox.IdempotentToken,
+                            OrderIdempotentToken = paymentOutbox.OrderIdempotentToken
                         };
 
                         //var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");
@@ -50,7 +53,10 @@ namespace PaymentProcessOutboxJob.Jobs
                 }
                 paymentOutbox.ProcessedDate = DateTime.Now;
                 await _paymentOutboxRepository.UpdateAsync(paymentOutbox);
-                Console.WriteLine("Payment outbox table checked!");
+                var orderOutbox = await _orderOutboxRepository.GetWhere(o => o.IdempotentToken == paymentOutbox.OrderIdempotentToken);
+                orderOutbox[0].Step = 2;
+                await _orderOutboxRepository.UpdateAsync(orderOutbox[0]);
+                Console.WriteLine("Order outbox table step = 2 is done!");
             }
 
         }

@@ -17,5 +17,7 @@ namespace DomainPayment
         public string @Type { get; set; }
         public string Payload { get; set; }
         public Guid IdempotentToken { get; set; }
+        public Guid OrderIdempotentToken { get; set; }
+
     }
 }

@@ -15,6 +15,7 @@ namespace Application.Repositories
         Task<T> UpdateAsync(T model);
         Task SaveChangesAsync();
         Task<T> AddAsyncT(T model);
-
+        Task<T> GetAsync(Expression<Func<T, bool>> method);
+        T Get(Expression<Func<T, bool>> method);
     }
 }

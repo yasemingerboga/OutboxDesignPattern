@@ -2,9 +2,11 @@ using Application.Producers;
 using Application.Repositories;
 using Microsoft.EntityFrameworkCore;
 using PaymentProcessOutboxJob.Jobs;
-using Persistance.Context;
-using Persistance.Repositories;
+using PaymentPersistance.Context;
+using PaymentPersistance.Repositories;
 using Quartz;
+using Persistance.Repositories;
+using Persistance.Context;
 
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((hostContext, services) =>
@@ -32,7 +34,8 @@ IHost host = Host.CreateDefaultBuilder(args)
         services.AddScoped<IEventProducer, EventProducer>();
         services.AddScoped<IPaymentOutboxRepository, PaymentOutboxRepository>();
         services.AddDbContext<PaymentDbContext>(options => options.UseSqlServer("Server=localhost,1455;Database=PaymentDb; TrustServerCertificate=True; User = sa; Password=password123*"));
-
+        services.AddDbContext<OrderDbContext>(options => options.UseSqlServer("Server=localhost,1444;Database=OrderDb; TrustServerCertificate=True; User = sa; Password=password123*"));
+        services.AddScoped<IOrderOutboxRepository, OrderOutboxRepository>();
     })
     .Build();
 

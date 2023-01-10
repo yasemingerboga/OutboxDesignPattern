@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Persistance.Context
+namespace PaymentPersistance.Context
 {
     public class PaymentDbContext : DbContext
     {

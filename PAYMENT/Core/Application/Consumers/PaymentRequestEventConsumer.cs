@@ -51,9 +51,9 @@ namespace Application.Consumers
 
                     Console.WriteLine($"Message recieved: {consumerResult.Message.Value} - Topic: {consumerResult.Topic} - Offset: {consumerResult.Offset} - Timestamp: {consumerResult.Timestamp}");
 
-                    var @event = JsonSerializer.Deserialize<PaymentCreatedEvent>(consumerResult.Message.Value);
+                    var @event = JsonSerializer.Deserialize<OrderCreatedEvent>(consumerResult.Message.Value);
 
-                    Payment payment = new Payment() { Id = @event.Id, isPay = true, Name = "Credit Card" };
+                    Payment payment = new Payment() {isPay = true, Name = "Credit Card" };
                     await _paymentRepository.AddAsync(payment);
                     await _paymentRepository.SaveChangesAsync();
                     Console.WriteLine("Payment Tablosuna kayıt yapıldı.");
@@ -63,7 +63,8 @@ namespace Application.Consumers
                         ProcessedDate = null,
                         Payload = JsonSerializer.Serialize(payment),
                         Type = nameof(PaymentCreatedEvent),
-                        IdempotentToken = Guid.NewGuid()
+                        IdempotentToken = Guid.NewGuid(),
+                        OrderIdempotentToken = @event.IdempotentToken
                     };
                     await _paymentOutboxRepository.AddAsync(paymentOutbox);
                     await _paymentOutboxRepository.SaveChangesAsync();
