@@ -22,7 +22,9 @@ namespace OrderAPI.Consumers
                 var eventConsumer = serviceScope.ServiceProvider.GetRequiredService<IEventConsumer>();
                 //var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");
                 var topic = "payment-response-topic";
-                Task.Run(async () => await eventConsumer.Consume(topic), cancellationToken);
+                //await Task.Run(() => eventConsumer.Consume(topic), cancellationToken);
+                Task.Run(async() => await eventConsumer.Consume(topic), cancellationToken);
+
                 //await _orderRepository.SaveChangesAsync();
             }
             return Task.CompletedTask;

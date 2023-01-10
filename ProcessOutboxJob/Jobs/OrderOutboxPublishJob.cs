@@ -47,7 +47,8 @@ namespace ProcessOutboxJob.Jobs
                             Description = order.Description,
                             OrderId = order.Id,
                             Quantity = order.Quantity,
-                            IdempotentToken = orderOutbox.IdempotentToken
+                            IdempotentToken = orderOutbox.IdempotentToken,
+                            Step = orderOutbox.Step
                         };
 
                         //var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");

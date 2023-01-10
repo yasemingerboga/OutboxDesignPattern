@@ -1,13 +1,14 @@
 ﻿using Application.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Persistance.Context;
+using PaymentPersistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Persistance.Repositories
+namespace PaymentPersistance.Repositories
 {
     public class Repository<T> : IRepository<T>
         where T : class
@@ -26,6 +27,12 @@ namespace Persistance.Repositories
             await _context.AddAsync(model);
             return model;
         }
+
+        public async Task<T> GetAsync(Expression<Func<T, bool>> method)
+            => await Table.Where(method).SingleOrDefaultAsync();
+
+        public T Get(Expression<Func<T, bool>> method)
+            => Table.Where(method).FirstOrDefault();
 
         public async Task<List<T>> GetAll() => await Table.ToListAsync();
 

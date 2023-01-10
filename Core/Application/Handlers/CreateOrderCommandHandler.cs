@@ -35,7 +35,8 @@ namespace Application.Handlers
                 ProcessedDate = null,
                 Payload = JsonSerializer.Serialize(newOrder),
                 Type = nameof(OrderCreatedEvent),
-                IdempotentToken = Guid.NewGuid()
+                IdempotentToken = Guid.NewGuid(),
+                Step = 1
             };
             await _orderOutboxRepository.AddAsync(orderOutbox);
             await _orderOutboxRepository.SaveChangesAsync();

@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainPayment", "PAYMENT\Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{04F96ED8-CF1F-4304-87C0-A1A7C2D6FD69}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistance", "PAYMENT\Infrastructure\Persistance\Persistance.csproj", "{4B847FDB-DB21-4A4F-9213-E61918C09890}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentPersistance", "PAYMENT\Infrastructure\Persistance\PaymentPersistance.csproj", "{4B847FDB-DB21-4A4F-9213-E61918C09890}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{FCD0D02F-5A56-4604-BD84-59F56403BD48}"
 EndProject

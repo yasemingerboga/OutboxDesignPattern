@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Persistance.Context;
+using PaymentPersistance.Context;
 
 #nullable disable
 
-namespace Persistance.Migrations
+namespace PaymentPersistance.Migrations
 {
     [DbContext(typeof(PaymentDbContext))]
     partial class PaymentDbContextModelSnapshot : ModelSnapshot
@@ -71,6 +71,9 @@ namespace Persistance.Migrations
 
                     b.Property<DateTime>("OccuredOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<Guid>("OrderIdempotentToken")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Payload")
                         .IsRequired()

@@ -2,8 +2,8 @@ using Application.Consumers;
 using Application.Repositories;
 using Microsoft.EntityFrameworkCore;
 using PaymentAPI.Consumers;
-using Persistance;
-using Persistance.Context;
+using PaymentPersistance.Context;
+using PaymentPersistance.Repositories;
 using Persistance.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);

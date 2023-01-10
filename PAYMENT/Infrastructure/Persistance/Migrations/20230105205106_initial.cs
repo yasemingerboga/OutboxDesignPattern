@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Persistance.Migrations
+namespace PaymentPersistance.Migrations
 {
     /// <inheritdoc />
     public partial class initial : Migration
@@ -38,7 +38,8 @@ namespace Persistance.Migrations
                     OccuredOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProcessedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Payload = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Payload = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OrderIdempotentToken = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {

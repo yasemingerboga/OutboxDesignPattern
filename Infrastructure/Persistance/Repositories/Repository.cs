@@ -4,6 +4,7 @@ using Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,6 +28,8 @@ namespace Persistance.Repositories
             return model;
         }
 
+        public async Task<T> GetAsync(Expression<Func<T, bool>> method)
+        => await Table.Where(method).SingleOrDefaultAsync();
 
         public async Task<List<T>> GetAll() => await Table.ToListAsync();
 
@@ -43,5 +46,7 @@ namespace Persistance.Repositories
             return model;
         }
 
+        public T Get(Expression<Func<T, bool>> method)
+        => Table.Where(method).FirstOrDefault();
     }
 }
