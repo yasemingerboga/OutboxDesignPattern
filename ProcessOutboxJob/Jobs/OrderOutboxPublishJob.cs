@@ -2,7 +2,6 @@
 using Application.Repositories;
 using Confluent.Kafka;
 using DomainPayment.Entities;
-using ProcessOutboxJob.Contexts;
 using Quartz;
 using Shared.Events;
 using System;
@@ -54,16 +53,43 @@ namespace ProcessOutboxJob.Jobs
                         //var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");
                         var topic = "payment-request-topic";
                         await _eventProducer.Produce1Async(topic, orderCreatedEvent);
-                        //wait for payment-response-topic;
-                        //başarılıysa order add gerçekleşecek
-                        //değilse gerçekleşmeyecek?
+                        orderOutbox.ProcessedDate = DateTime.Now;
+                        orderOutbox.Step = 1;
+                        await _orderOutboxRepository.UpdateAsync(orderOutbox);
+                        Console.WriteLine("Order outbox table updated!");
                     }
                 }
-                orderOutbox.ProcessedDate = DateTime.Now;
-                await _orderOutboxRepository.UpdateAsync(orderOutbox);
-                Console.WriteLine("Order outbox table checked!");
             }
+            var paymentCreatedOutboxes = await _orderOutboxRepository.GetWhere(o => o.State == 1 && o.Type == nameof(PaymentCreatedEvent) && o.ProcessedDate == null);
+            if (paymentCreatedOutboxes.Any())
+            {
+                foreach (OrderOutbox orderOutbox in paymentCreatedOutboxes)
+                {
+                    if (orderOutbox.Type == nameof(PaymentCreatedEvent))
+                    {
+                        Order? order = JsonSerializer.Deserialize<Order>(orderOutbox.Payload);
+                        if (order != null)
+                        {
+                            OrderCreatedEvent orderCreatedEvent = new()
+                            {
+                                Description = order.Description,
+                                OrderId = order.Id,
+                                Quantity = order.Quantity,
+                                IdempotentToken = orderOutbox.IdempotentToken,
+                                Step = orderOutbox.Step
+                            };
 
+                            //var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");
+                            var topic = "notification-shipment-topic";
+                            await _eventProducer.ProduceAsync(topic, orderCreatedEvent);
+                            orderOutbox.ProcessedDate = DateTime.Now;
+                            orderOutbox.Step = 2;
+                            await _orderOutboxRepository.UpdateAsync(orderOutbox);
+                            Console.WriteLine("Order outbox table updated!");
+                        }
+                    }
+                }
+            }
         }
     }
 }

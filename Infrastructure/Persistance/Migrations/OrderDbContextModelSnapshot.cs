@@ -78,12 +78,17 @@ namespace Persistance.Migrations
                     b.Property<DateTime>("OccuredOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<long>("OrderId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Payload")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ProcessedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<long>("State")
+                        .HasColumnType("bigint");
 
                     b.Property<long>("Step")
                         .HasColumnType("bigint");

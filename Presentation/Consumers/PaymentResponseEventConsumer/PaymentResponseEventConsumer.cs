@@ -1,13 +1,16 @@
-﻿using Confluent.Kafka;
+﻿using Application.Consumers;
+using Application.Repositories;
+using Confluent.Kafka;
 using Shared.Events;
 using System.Text.Json;
 
-namespace Application.Consumers
+namespace PaymentResponseEventConsumer
 {
     public class PaymentResponseEventConsumer : IEventConsumer
     {
         private readonly ConsumerConfig _config;
-        public PaymentResponseEventConsumer()
+        private IOrderOutboxRepository _orderOutboxRepository;
+        public PaymentResponseEventConsumer(IOrderOutboxRepository orderOutboxRepository)
         {
             _config = new ConsumerConfig()
             {
@@ -17,9 +20,10 @@ namespace Application.Consumers
                 GroupId = "SM_CONSUMER",
                 AllowAutoCreateTopics = false,
             };
+            _orderOutboxRepository = orderOutboxRepository;
         }
 
-        public async Task Consume(string topic)
+        public async Task ConsumeAsync(string topic)
         {
             using var consumer = new ConsumerBuilder<string, string>(_config)
                 .SetKeyDeserializer(Deserializers.Utf8)
@@ -42,6 +46,13 @@ namespace Application.Consumers
                     if (@event.isPay)
                     {
                         Console.WriteLine($"Payment işleminin sonucu başarılı döndü! (payment-response-topic)");
+                        var orderOutbox = _orderOutboxRepository.Get(o => o.Type == nameof(PaymentCreatedEvent) && o.OrderId == @event.OrderId && o.State == 0);
+                        orderOutbox.State = 1;
+                        orderOutbox.Payload = JsonSerializer.Serialize(@event);
+                        //orderOutbox.ProcessedDate = DateTime.Now;
+                        orderOutbox.Step = 1; //payment publish job içinde yapılmalı ama bağımlılık yaratır?
+                        await _orderOutboxRepository.UpdateAsync(orderOutbox);
+                        Console.WriteLine("OrderOutbox içerisindeki orderId = "+ @event.OrderId+" olan order için PaymentCreatedEvent state'i 1 olarak işaretlendi.");
                     }
                     else
                     {

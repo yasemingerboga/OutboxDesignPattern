@@ -28,19 +28,33 @@ namespace Application.Handlers
             Order newOrder = new Order { Description = request.Description, Quantity = request.Quantity, CreatedAt = DateTime.Today };
             await _orderRepository.AddAsync(newOrder);
             await _orderRepository.SaveChangesAsync();
-            Console.WriteLine($"Order tablosuna kayıt yapıldı.");
-            OrderOutbox orderOutbox = new()
+            Console.WriteLine($"Order tablosuna kayıt yapıldı. OrderId: " + newOrder.Id);
+            OrderOutbox orderOutboxOrderCreated = new()
             {
                 OccuredOn = DateTime.UtcNow,
                 ProcessedDate = null,
                 Payload = JsonSerializer.Serialize(newOrder),
                 Type = nameof(OrderCreatedEvent),
                 IdempotentToken = Guid.NewGuid(),
-                Step = 1
+                OrderId = newOrder.Id,
+                State = 0,
+                Step = 0
             };
-            await _orderOutboxRepository.AddAsync(orderOutbox);
+            OrderOutbox orderOutboxPayment = new()
+            {
+                OccuredOn = DateTime.UtcNow,
+                ProcessedDate = null,
+                Payload = null,
+                Type = nameof(PaymentCreatedEvent),
+                IdempotentToken = Guid.NewGuid(),
+                OrderId = newOrder.Id,
+                State = 0,
+                Step = 0
+            };
+            await _orderOutboxRepository.AddAsync(orderOutboxOrderCreated);
+            await _orderOutboxRepository.AddAsync(orderOutboxPayment);
             await _orderOutboxRepository.SaveChangesAsync();
-            Console.WriteLine($"Order Outbox tablosuna kayıt yapıldı.");
+            Console.WriteLine($"Order Outbox tablosuna 2 kayıt yapıldı. (orderCreated ve paymentCreated için) ");
             return new CreateOrderCommandResponse { Description = newOrder.Description, CreatedAt = newOrder.CreatedAt, Quantity = newOrder.Quantity, Id = newOrder.Id };
         }
     }
