@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PaymentPersistance.Context;
+using Persistance.Context;
 
 #nullable disable
 
-namespace PaymentPersistance.Migrations
+namespace Persistance.Migrations
 {
-    [DbContext(typeof(PaymentDbContext))]
-    partial class PaymentDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(OrderDbContext))]
+    [Migration("20230115110220_second")]
+    partial class second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,7 @@ namespace PaymentPersistance.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("DomainPayment.Payment", b =>
+            modelBuilder.Entity("DomainPayment.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,23 +33,30 @@ namespace PaymentPersistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("isPay")
-                        .HasColumnType("bit");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Payments", "paymentdb");
+                    b.ToTable("Orders", "orderdb");
                 });
 
-            modelBuilder.Entity("DomainPayment.PaymentInbox", b =>
+            modelBuilder.Entity("DomainPayment.Entities.OrderInbox", b =>
                 {
                     b.Property<Guid>("IdempotentToken")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
@@ -54,16 +64,15 @@ namespace PaymentPersistance.Migrations
                     b.Property<bool>("Processed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("isPayment")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("IdempotentToken");
 
-                    b.ToTable("PaymentInboxes", "paymentdb");
+                    b.ToTable("OrderInboxes", "orderdb");
                 });
 
-            modelBuilder.Entity("DomainPayment.PaymentOutbox", b =>
+            modelBuilder.Entity("DomainPayment.Entities.OrderOutbox", b =>
                 {
                     b.Property<Guid>("IdempotentToken")
                         .ValueGeneratedOnAdd()
@@ -75,9 +84,6 @@ namespace PaymentPersistance.Migrations
                     b.Property<long>("OrderId")
                         .HasColumnType("bigint");
 
-                    b.Property<Guid>("OrderIdempotentToken")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Payload")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -85,13 +91,19 @@ namespace PaymentPersistance.Migrations
                     b.Property<DateTime?>("ProcessedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<long>("State")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("Step")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdempotentToken");
 
-                    b.ToTable("PaymentOutboxes", "paymentdb");
+                    b.ToTable("OrderOutboxes", "orderdb");
                 });
 #pragma warning restore 612, 618
         }

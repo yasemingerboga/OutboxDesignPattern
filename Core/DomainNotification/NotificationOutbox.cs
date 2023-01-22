@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DomainPayment
+namespace DomainNotification
 {
-    public class PaymentOutbox
+    public class NotificationOutbox
     {
-        public PaymentOutbox()
+        public NotificationOutbox()
         {
 
         }
@@ -19,6 +19,5 @@ namespace DomainPayment
         public Guid IdempotentToken { get; set; }
         public Guid OrderIdempotentToken { get; set; }
         public long OrderId { get; set; }
-
     }
 }

@@ -12,6 +12,7 @@ namespace Shared.Events
         public bool isPay { get; set; }
         public Guid IdempotentToken { get; set; }
         public Guid OrderIdempotentToken { get; set; }
+        public long OrderId { get; set; }
 
     }
 }

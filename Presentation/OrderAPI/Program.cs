@@ -4,7 +4,6 @@ using Application.Handlers;
 using Application.Repositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using OrderAPI.Consumers;
 using Persistance;
 using Persistance.Context;
 using Persistance.Repositories;
@@ -16,15 +15,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 //builder.Services.AddMediatR(typeof(CreateOrderCommandHandler).Assembly);
 builder.Services.AddApplicationServices();
-builder.Services.AddScoped<IEventConsumer, PaymentResponseEventConsumer>();
 builder.Services.AddPersistenceServices();
+//builder.Services.AddScoped<IEventConsumer, PaymentResponseEventConsumer>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //builder.Services.AddHostedService<Worker>();
-builder.Services.AddHostedService<PaymentResponseEventConsumerHostedService>();
+//builder.Services.AddHostedService<PaymentResponseEventConsumerHostedService>();
 
 var app = builder.Build();
 

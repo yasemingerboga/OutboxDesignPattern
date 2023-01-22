@@ -4,25 +4,25 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PaymentPersistance.Context;
+using PersistanceNotification.Context;
 
 #nullable disable
 
-namespace PaymentPersistance.Migrations
+namespace PersistanceNotification.Migrations
 {
-    [DbContext(typeof(PaymentDbContext))]
-    partial class PaymentDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(NotificationDbContext))]
+    partial class NotificationDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0")
+                .HasAnnotation("ProductVersion", "7.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("DomainPayment.Payment", b =>
+            modelBuilder.Entity("DomainNotification.Notification", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,40 +30,16 @@ namespace PaymentPersistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Message")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("isPay")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Payments", "paymentdb");
+                    b.ToTable("Notifications", "notificationdb");
                 });
 
-            modelBuilder.Entity("DomainPayment.PaymentInbox", b =>
-                {
-                    b.Property<Guid>("IdempotentToken")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Processed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("isPayment")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("IdempotentToken");
-
-                    b.ToTable("PaymentInboxes", "paymentdb");
-                });
-
-            modelBuilder.Entity("DomainPayment.PaymentOutbox", b =>
+            modelBuilder.Entity("DomainNotification.NotificationOutbox", b =>
                 {
                     b.Property<Guid>("IdempotentToken")
                         .ValueGeneratedOnAdd()
@@ -91,7 +67,7 @@ namespace PaymentPersistance.Migrations
 
                     b.HasKey("IdempotentToken");
 
-                    b.ToTable("PaymentOutboxes", "paymentdb");
+                    b.ToTable("NotificationOutboxes", "notificationdb");
                 });
 #pragma warning restore 612, 618
         }

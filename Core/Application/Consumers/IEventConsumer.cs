@@ -9,6 +9,6 @@ namespace Application.Consumers
 {
     public interface IEventConsumer
     {
-        Task Consume(string topic);
+        Task ConsumeAsync(string topic);
     }
 }

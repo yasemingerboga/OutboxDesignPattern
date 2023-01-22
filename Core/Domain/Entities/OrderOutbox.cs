@@ -15,8 +15,10 @@ namespace DomainPayment.Entities
         public DateTime OccuredOn { get; set; }
         public DateTime? ProcessedDate { get; set; }
         public string @Type { get; set; }
-        public string Payload { get; set; }
+        public string? Payload { get; set; }
         public Guid IdempotentToken { get; set; }
+        public long State { get; set; }
         public long Step { get; set; }
+        public long OrderId { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Application.Repositories;
 using Microsoft.EntityFrameworkCore;
-using PaymentPersistance.Context;
+using PersistanceNotification.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +8,13 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PaymentPersistance.Repositories
+namespace PersistanceNotification.Repositories
 {
     public class Repository<T> : IRepository<T>
-        where T : class
+         where T : class
     {
-        private readonly PaymentDbContext _context;
-        public Repository(PaymentDbContext context)
+        private readonly NotificationDbContext _context;
+        public Repository(NotificationDbContext context)
         {
             _context = context;
         }

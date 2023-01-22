@@ -18,13 +18,14 @@ namespace PaymentProcessOutboxJob.Jobs
         //readonly IPublishEndpoint _publishEndpoint;
         private readonly IEventProducer _eventProducer;
         private IPaymentOutboxRepository _paymentOutboxRepository;
-        private IOrderOutboxRepository _orderOutboxRepository;
+        //private IOrderOutboxRepository _orderOutboxRepository;
 
-        public PaymentOutboxPublishJob(IEventProducer eventProducer, IPaymentOutboxRepository paymentOutboxRepository, IOrderOutboxRepository orderOutboxRepository)
+        public PaymentOutboxPublishJob(IEventProducer eventProducer, IPaymentOutboxRepository paymentOutboxRepository)
+        //,IOrderOutboxRepository orderOutboxRepository)
         {
             _eventProducer = eventProducer;
             _paymentOutboxRepository = paymentOutboxRepository;
-            _orderOutboxRepository = orderOutboxRepository;
+            //_orderOutboxRepository = orderOutboxRepository;
         }
 
         public async Task Execute(IJobExecutionContext context)
@@ -43,22 +44,18 @@ namespace PaymentProcessOutboxJob.Jobs
                             Id = payment.Id,
                             isPay = payment.isPay,
                             IdempotentToken = paymentOutbox.IdempotentToken,
-                            OrderIdempotentToken = paymentOutbox.OrderIdempotentToken
+                            OrderIdempotentToken = paymentOutbox.OrderIdempotentToken,
+                            OrderId = paymentOutbox.OrderId
                         };
 
                         //var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");
                         var topic = "payment-response-topic";
                         await _eventProducer.ProduceAsync(topic, paymentCreatedEvent);
+                        paymentOutbox.ProcessedDate = DateTime.Now;
+                        await _paymentOutboxRepository.UpdateAsync(paymentOutbox);
                     }
                 }
-                paymentOutbox.ProcessedDate = DateTime.Now;
-                await _paymentOutboxRepository.UpdateAsync(paymentOutbox);
-                var orderOutbox = await _orderOutboxRepository.GetWhere(o => o.IdempotentToken == paymentOutbox.OrderIdempotentToken);
-                orderOutbox[0].Step = 2;
-                await _orderOutboxRepository.UpdateAsync(orderOutbox[0]);
-                Console.WriteLine("Order outbox table step = 2 is done!");
             }
-
         }
     }
 }

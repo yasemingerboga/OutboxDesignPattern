@@ -18,7 +18,7 @@ namespace PaymentAPI.Consumers
                 var eventConsumer = serviceScope.ServiceProvider.GetRequiredService<IEventConsumer>();
                 //var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");
                 var topic = "payment-request-topic";
-                await Task.Run(() => eventConsumer.Consume(topic), cancellationToken);
+                await Task.Run(() => eventConsumer.ConsumeAsync(topic), cancellationToken);
             }
 
         }

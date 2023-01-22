@@ -11,7 +11,6 @@ using Persistance.Repositories;
 using StockAPI.Consumers;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddScoped<IEventConsumer, EventConsumer>();
 builder.Services.AddHostedService<ConsumerHostedService>();
 builder.Services.AddMediatR(typeof(CreateOrderCommandHandler).Assembly);
 builder.Services.AddPersistenceServices();

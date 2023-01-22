@@ -1,6 +1,7 @@
-﻿using Application.Repositories;
+﻿using Application.Consumers;
+using ApplicationNotification.Repository;
 using Confluent.Kafka;
-using DomainPayment;
+using DomainNotification;
 using Shared.Events;
 using System;
 using System.Collections.Generic;
@@ -9,16 +10,17 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Application.Consumers
+namespace ApplicationNotification.Consumers
 {
-    public class PaymentRequestEventConsumer : IEventConsumer
+    public class NotificationShipmentEventConsumer : IEventConsumer
     {
         private readonly ConsumerConfig _config;
-        private IPaymentOutboxRepository _paymentOutboxRepository;
-        private IPaymentRepository _paymentRepository;
+        private INotificationRepository _notificationRepository;
+        private INotificationOutboxRepository _notificationOutboxRepository;
+
         //private IEventProducer _eventProducer;
-        public PaymentRequestEventConsumer(IPaymentRepository paymentRepository, IPaymentOutboxRepository paymentOutboxRepository)
-            //, IEventProducer eventProducer)
+        public NotificationShipmentEventConsumer( INotificationRepository notificationRepository ,INotificationOutboxRepository notificationOutboxRepository)
+        //, IEventProducer eventProducer)
         {
             _config = new ConsumerConfig()
             {
@@ -28,8 +30,8 @@ namespace Application.Consumers
                 GroupId = "SM_CONSUMER",
                 AllowAutoCreateTopics = false,
             };
-            _paymentRepository = paymentRepository;
-            _paymentOutboxRepository = paymentOutboxRepository;
+            _notificationOutboxRepository= notificationOutboxRepository;
+            _notificationRepository = notificationRepository;
             //_eventProducer = eventProducer;
         }
 
@@ -53,24 +55,23 @@ namespace Application.Consumers
 
                     var @event = JsonSerializer.Deserialize<OrderCreatedEvent>(consumerResult.Message.Value);
 
-                    Payment payment = new Payment() {isPay = true, Name = "Credit Card" };
-                    await _paymentRepository.AddAsync(payment);
-                    await _paymentRepository.SaveChangesAsync();
-                    Console.WriteLine("Payment Tablosuna kayıt yapıldı.");
-                    PaymentOutbox paymentOutbox = new PaymentOutbox()
+                    Notification notification = new Notification() { Message = "Order notification'ı oluşturuldu." };
+                    await _notificationRepository.AddAsync(notification);
+                    await _notificationRepository.SaveChangesAsync();
+                    Console.WriteLine("Notification Tablosuna kayıt yapıldı.");
+                    NotificationOutbox notificationOutbox = new NotificationOutbox()
                     {
                         OccuredOn = DateTime.UtcNow,
                         ProcessedDate = null,
-                        Payload = JsonSerializer.Serialize(payment),
-                        Type = nameof(PaymentCreatedEvent),
+                        Payload = JsonSerializer.Serialize(notification),
+                        Type = nameof(NotificationCreatedEvent),
                         IdempotentToken = Guid.NewGuid(),
                         OrderIdempotentToken = @event.IdempotentToken,
                         OrderId = @event.OrderId
                     };
-                    await _paymentOutboxRepository.AddAsync(paymentOutbox);
-                    await _paymentOutboxRepository.SaveChangesAsync();
-                    Console.WriteLine("Payment Outbox Tablosuna kayıt yapıldı.");
-                    //await _eventProducer.ProduceAsync<PaymentCreatedEvent>("payment-response-topic", @event);
+                    await _notificationOutboxRepository.AddAsync(notificationOutbox);
+                    await _notificationOutboxRepository.SaveChangesAsync();
+                    Console.WriteLine("Notification Outbox Tablosuna kayıt yapıldı.");
                     consumer.Commit(consumerResult);
                 }
                 catch (ConsumeException e)
