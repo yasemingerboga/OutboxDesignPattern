@@ -8,10 +8,8 @@ namespace Shared.Events
 {
     public class NotificationCreatedEvent
     {
-        public int OrderId { get; set; }
-        public int Quantity { get; set; }
-        public string Description { get; set; }
-        public Guid IdempotentToken { get; set; }
-        public long Step { get; set; }
+        public int Id { get; set; }
+        public string Message { get; set; }
+        public long OrderId { get; set; }
     }
 }
