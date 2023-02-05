@@ -51,10 +51,22 @@ namespace Application.Handlers
                 State = 0,
                 Step = 0
             };
+            OrderOutbox orderOutboxNotification = new()
+            {
+                OccuredOn = DateTime.UtcNow,
+                ProcessedDate = null,
+                Payload = null,
+                Type = nameof(NotificationCreatedEvent),
+                IdempotentToken = Guid.NewGuid(),
+                OrderId = newOrder.Id,
+                State = 0,
+                Step = 0
+            };
             await _orderOutboxRepository.AddAsync(orderOutboxOrderCreated);
             await _orderOutboxRepository.AddAsync(orderOutboxPayment);
+            await _orderOutboxRepository.AddAsync(orderOutboxNotification);
             await _orderOutboxRepository.SaveChangesAsync();
-            Console.WriteLine($"Order Outbox tablosuna 2 kayıt yapıldı. (orderCreated ve paymentCreated için) ");
+            Console.WriteLine($"Order Outbox tablosuna 3 kayıt yapıldı. (orderCreated, paymentCreated, notificationCreated için) ");
             return new CreateOrderCommandResponse { Description = newOrder.Description, CreatedAt = newOrder.CreatedAt, Quantity = newOrder.Quantity, Id = newOrder.Id };
         }
     }
