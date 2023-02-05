@@ -73,7 +73,7 @@ namespace ProcessOutboxJob.Jobs
                             OrderCreatedEvent orderCreatedEvent = new()
                             {
                                 Description = order.Description,
-                                OrderId = order.Id,
+                                OrderId = orderOutbox.OrderId,
                                 Quantity = order.Quantity,
                                 IdempotentToken = orderOutbox.IdempotentToken,
                                 Step = orderOutbox.Step

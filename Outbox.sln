@@ -57,13 +57,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationProcessOutboxJo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consumers", "Consumers", "{2837359C-1390-421E-8031-975254820576}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentResponseEventConsumer", "Presentation\Consumers\PaymentResponseEventConsumer\PaymentResponseEventConsumer.csproj", "{5EA169EF-C711-4298-9B6B-CD1EBF71E706}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentResponseEventConsumer", "Presentation\Consumers\PaymentResponseEventConsumer\PaymentResponseEventConsumer.csproj", "{5EA169EF-C711-4298-9B6B-CD1EBF71E706}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationNotification", "Core\ApplicationNotification\ApplicationNotification.csproj", "{83F04B1A-09CB-49DE-9131-0E46897EEF95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationNotification", "Core\ApplicationNotification\ApplicationNotification.csproj", "{83F04B1A-09CB-49DE-9131-0E46897EEF95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainNotification", "Core\DomainNotification\DomainNotification.csproj", "{FCB8D10D-B2A8-46E4-BDA1-90E2D568BD51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainNotification", "Core\DomainNotification\DomainNotification.csproj", "{FCB8D10D-B2A8-46E4-BDA1-90E2D568BD51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistanceNotification", "PersistanceNotification\PersistanceNotification.csproj", "{C22E25E7-FC39-4CF4-BBFB-F71B36C82F65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistanceNotification", "PersistanceNotification\PersistanceNotification.csproj", "{C22E25E7-FC39-4CF4-BBFB-F71B36C82F65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationResponseEventConsumer", "Presentation\Consumers\NotificationResponseEventConsumer\NotificationResponseEventConsumer.csproj", "{F52409F7-7BB6-4C0A-B4CC-6691D06F76E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +145,10 @@ Global
 		{C22E25E7-FC39-4CF4-BBFB-F71B36C82F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C22E25E7-FC39-4CF4-BBFB-F71B36C82F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C22E25E7-FC39-4CF4-BBFB-F71B36C82F65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F52409F7-7BB6-4C0A-B4CC-6691D06F76E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F52409F7-7BB6-4C0A-B4CC-6691D06F76E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F52409F7-7BB6-4C0A-B4CC-6691D06F76E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F52409F7-7BB6-4C0A-B4CC-6691D06F76E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -172,6 +178,7 @@ Global
 		{83F04B1A-09CB-49DE-9131-0E46897EEF95} = {717C7130-45A7-4023-AB91-0A96559F33D7}
 		{FCB8D10D-B2A8-46E4-BDA1-90E2D568BD51} = {717C7130-45A7-4023-AB91-0A96559F33D7}
 		{C22E25E7-FC39-4CF4-BBFB-F71B36C82F65} = {6A830158-B750-4A2A-86B6-067582D0EC2A}
+		{F52409F7-7BB6-4C0A-B4CC-6691D06F76E9} = {2837359C-1390-421E-8031-975254820576}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {687AA714-493F-4CE7-AAB3-4CD6B6ED0D60}
