@@ -47,12 +47,18 @@ namespace PaymentResponseEventConsumer
                     {
                         Console.WriteLine($"Payment işleminin sonucu başarılı döndü! (payment-response-topic)");
                         var orderOutbox = _orderOutboxRepository.Get(o => o.Type == nameof(PaymentCreatedEvent) && o.OrderId == @event.OrderId && o.State == 0);
-                        orderOutbox.State = 1;
-                        orderOutbox.Payload = JsonSerializer.Serialize(@event);
-                        //orderOutbox.ProcessedDate = DateTime.Now;
-                        orderOutbox.Step = 1; //payment publish job içinde yapılmalı ama bağımlılık yaratır?
-                        await _orderOutboxRepository.UpdateAsync(orderOutbox);
-                        Console.WriteLine("OrderOutbox içerisindeki orderId = "+ @event.OrderId+" olan order için PaymentCreatedEvent state'i 1 olarak işaretlendi.");
+                        if (orderOutbox !=null)
+                        {
+                            orderOutbox.State = 1;
+                            orderOutbox.Payload = JsonSerializer.Serialize(@event);
+                            //orderOutbox.ProcessedDate = DateTime.Now;
+                            orderOutbox.Step = 1; //payment publish job içinde yapılmalı ama bağımlılık yaratır?
+                            await _orderOutboxRepository.UpdateAsync(orderOutbox);
+                            Console.WriteLine("OrderOutbox içerisindeki orderId = " + @event.OrderId + " olan order için PaymentCreatedEvent state'i 1 olarak işaretlendi.");
+                        } else
+                        {
+                            Console.WriteLine("OrderOutbox kaydı bulunamadı");
+                        }
                     }
                     else
                     {
