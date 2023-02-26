@@ -9,13 +9,13 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace NotificationResponseEventConsumer
+namespace ShipmentResponseEventConsumer
 {
-    public class NotificationResponseEventConsumer : IEventConsumer
+    public class ShipmentResponseEventConsumer : IEventConsumer
     {
         private readonly ConsumerConfig _config;
         private IOrderOutboxRepository _orderOutboxRepository;
-        public NotificationResponseEventConsumer(IOrderOutboxRepository orderOutboxRepository)
+        public ShipmentResponseEventConsumer(IOrderOutboxRepository orderOutboxRepository)
         {
             _config = new ConsumerConfig()
             {
@@ -46,10 +46,10 @@ namespace NotificationResponseEventConsumer
 
                     Console.WriteLine($"Message recieved: {consumerResult.Message.Value} - Topic: {consumerResult.Topic} - Offset: {consumerResult.Offset} - Timestamp: {consumerResult.Timestamp}");
 
-                    var @event = JsonSerializer.Deserialize<NotificationCreatedEvent>(consumerResult.Message.Value);
+                    var @event = JsonSerializer.Deserialize<ShipmentCreatedEvent>(consumerResult.Message.Value);
 
-                    Console.WriteLine($"Notification işleminin sonucu döndü! (notification-response-topic)");
-                    var orderOutbox = _orderOutboxRepository.Get(o => o.Type == nameof(NotificationCreatedEvent) && o.OrderId == @event.OrderId && o.State == 0);
+                    Console.WriteLine($"Shipment işleminin sonucu döndü! (shipment-response-topic)");
+                    var orderOutbox = _orderOutboxRepository.Get(o => o.Type == nameof(ShipmentCreatedEvent) && o.OrderId == @event.OrderId && o.State == 0);
                     if (orderOutbox != null)
                     {
                         orderOutbox.State = 1;
@@ -58,10 +58,10 @@ namespace NotificationResponseEventConsumer
                         orderOutbox.Step = 1;
                         await _orderOutboxRepository.UpdateAsync(orderOutbox);
                     }
-                    Console.WriteLine("OrderOutbox içerisindeki orderId = " + @event.OrderId + " olan order için NotificationCreatedEvent state'i 1 olarak işaretlendi.");
+                    Console.WriteLine("OrderOutbox içerisindeki orderId = " + @event.OrderId + " olan order için ShipmentCreatedEvent state'i 1 (yani başarılı) olarak işaretlendi.");
                     consumer.Commit(consumerResult);
                     var isCompletedOrder = await _orderOutboxRepository.GetWhere(o => o.OrderId == @event.OrderId && o.State == 1);
-                    if (isCompletedOrder.Count == 3)
+                    if(isCompletedOrder.Count == 3)
                     {
                         Console.WriteLine("İşlem akışları tamamlandı! ");
                         var orderOutboxToComplete = _orderOutboxRepository.Get(o => o.Type == nameof(OrderCreatedEvent) && o.OrderId == @event.OrderId && o.State == 0);
